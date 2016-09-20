@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+</head>
+<body>
   <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -21,13 +23,14 @@
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-</script>
-</head>
-<body>
-
+   FB.ui({
+  method: 'send',
+  link: 'http://www.nytimes.com/interactive/2015/04/15/travel/europe-favorite-streets.html',
+});
+  </script>
 <a href="intent://send/0123456789#Intent;scheme=smsto;package=com.whatsapp;action=android.intent.action.SENDTO;end">Enviar WhatsApp</a>
 <br />
-<a href="http://www.facebook.com/dialog/send?app_id=833266396775503&amp;link=http://www.nytimes.com/interactive/2015/04/15/travel/europe-favorite-streets.html&amp;redirect_uri=https://www.domain.com/">Enviar Facebook</a>
+<a href="http://www.facebook.com/dialog/send?app_id=123456789&amp;link=http://www.nytimes.com/interactive/2015/04/15/travel/europe-favorite-streets.html&amp;redirect_uri=https://www.google.com/">Enviar Facebook</a>
 <br />
 <a href="sms://send?text=Hello%20World!">Enviar sms</a>
 </body>
