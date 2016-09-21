@@ -6,48 +6,64 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
-<body>
-  <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '833266396775503',
-      xfbml      : true,
-      version    : 'v2.7'
+  <body>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '833266396775503',
+          xfbml      : true,
+          version    : 'v2.7'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+       FB.ui({
+      method: 'send',
+      link: 'http://www.nytimes.com/interactive/2015/04/15/travel/europe-favorite-streets.html',
     });
-  };
+    </script>
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-   FB.ui({
-  method: 'send',
-  link: 'http://www.nytimes.com/interactive/2015/04/15/travel/europe-favorite-streets.html',
-});
-  </script>
+    <h2>Android</h2>
 
-<h2>Android</h2>
-
-<a href="intent://send/0123456789#Intent;scheme=smsto;package=com.whatsapp;action=android.intent.action.SENDTO;end">Enviar WhatsApp</a>
-<br />
-<a href="sms://&body=Hello%20World!">Enviar sms</a>
+    <a href="intent://send/0123456789#Intent;scheme=smsto;package=com.whatsapp;action=android.intent.action.SENDTO;end">Enviar WhatsApp</a>
+    <br />
+    <a href="sms://&body=Hello%20World!">Enviar sms</a>
 
 
-<h2>IOS</h2>
-<br />
-<a href="whatsapp://send?text=Hello%20World!">Enviar whatsapp</a>
-<br />
-<a href="sms://&body=Hello%20World!">Enviar sms!!</a>
+    <h2>IOS</h2>
+    <br />
+    <a href="whatsapp://send?text=Hello%20World!">Enviar whatsapp</a>
+    <br />
+    <a href="sms://&body=Hello%20World!">Enviar sms!!</a>
 
-like
-<div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</div>
-</body>
+    like
+    <div
+      class="fb-like"
+      data-share="true"
+      data-width="450"
+      data-show-faces="true">
+    </div>
+
+    <h2>Copiar a portapapeles</h2>
+    <p id="texto">Mensaje copiado al portapapeles</p>
+    <script type="text/javascript">
+      copyContent = function (el) {
+        var $tmp = $("<input />");
+        $("body").append($tmp);
+        $tmp.val($(el).text()).select();
+        document.execCommand("copy");
+        $tmp.remove();
+      }
+      $('.btn-copy').on('click', function() {
+        copyContent('#texto');
+      });
+    </script>
+    <a href="javascript:;" class="btn-copy">Copiar</a>
+  </body>
 </html>
