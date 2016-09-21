@@ -8,27 +8,6 @@
   <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
 </head>
   <body>
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '833266396775503',
-          xfbml      : true,
-          version    : 'v2.7'
-        });
-      };
-
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-       FB.ui({
-      method: 'send',
-      link: 'http://www.nytimes.com/interactive/2015/04/15/travel/europe-favorite-streets.html',
-    });
-    </script>
 
     <h2>Android</h2>
 
@@ -38,10 +17,11 @@
 
 
     <h2>IOS</h2>
+    <i>Testeado en safari y chrome</i>
     <br />
     <a href="whatsapp://send?text=Hello%20World!">Enviar whatsapp</a>
     <br />
-    <a href="sms://&body=Hello%20World!">Enviar sms!!</a>
+    <a href="sms://?body=Hello%20World!">Enviar sms!!</a>
 
 
     <h2>Copiar a portapapeles</h2>
@@ -57,6 +37,7 @@
       }
       $('.btn-copy').on('click', function() {
         copyContent('#texto');
+        console.log('texto copiado');
       });
     </script>
   </body>
