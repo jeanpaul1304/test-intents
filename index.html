@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
 </head>
   <body>
     <script>
@@ -52,6 +53,7 @@
 
     <h2>Copiar a portapapeles</h2>
     <p id="texto">Mensaje copiado al portapapeles</p>
+    <a href="javascript:;" class="btn-copy">Copiar</a>
     <script type="text/javascript">
       copyContent = function (el) {
         var $tmp = $("<input />");
@@ -64,6 +66,5 @@
         copyContent('#texto');
       });
     </script>
-    <a href="javascript:;" class="btn-copy">Copiar</a>
   </body>
 </html>
