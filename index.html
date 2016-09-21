@@ -4,28 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Web intents example</title>
   <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
 </head>
   <body>
-
+    <h1>Web intents example</h1>
     <h2>Android</h2>
+    <i>Tested in Chrome</i>
 
-    <a href="whatsapp://send?text=Hello%20World!">Enviar WhatsApp</a>
+    <a href="whatsapp://send?text=Hello%20jeanpaul1304!">Send to WhatsApp</a>
     <br />
-    <a href="sms:?body=Hello%20World!">Enviar sms</a>
+    <a href="sms:?body=Hello%20jeanpaul1304!">Send sms</a>
 
 
     <h2>IOS</h2>
-    <i>Testeado en safari y chrome</i>
+    <i>Tested in Safari and Chrome</i>
     <br />
-    <a href="whatsapp://send?text=Hello%20World!">Enviar whatsapp</a>
+    <a href="whatsapp://send?text=Hello%20jeanpaul1304!">Sent to whatsapp</a>
     <br />
-    <a href="sms://&body=Hello%20World!">Enviar sms!!</a>
+    <a href="sms://&body=Hello%20jeanpaul1304!">Send sms!!</a>
 
 
-    <h2>Copiar a portapapeles</h2>
-    <p id="texto">Mensaje copiado al portapapeles</p>
+    <h2>Copy to clipboard</h2>
+    <i>Only desktop</i>
+    <p id="texto" style="display:none;">Message from clipboard - @jeanpaul1304</p>
     <a href="javascript:;" class="btn-copy">Copiar</a>
     <script type="text/javascript">
       copyContent = function (el) {
@@ -37,7 +39,6 @@
       }
       $('.btn-copy').on('click', function() {
         copyContent('#texto');
-        console.log('texto copiado');
       });
     </script>
   </body>
